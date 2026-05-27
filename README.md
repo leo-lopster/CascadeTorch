@@ -62,3 +62,24 @@ Check the parent [CASCADE repository](https://github.com/HelmchenLabSoftware/Cas
 > Rupprecht P, Rózsa M, Fang X, Svoboda K, Helmchen F. *[Spike inference from calcium imaging data acquired with GCaMP8 indicators](https://www.biorxiv.org/content/10.1101/2025.03.03.641129)*, bioRxiv (2025).
 >
 > Rupprecht P, Fan W, Sullivan S, Helmchen F, Sdrulla A. *[Spike rate inference from mouse spinal cord calcium imaging data](https://www.jneurosci.org/content/45/18/e1187242025)*, J Neuroscience (2025).
+
+## Scripts
+
+### parse_raw.py
+
+Basic information: This script parses raw calcium imaging data files into a standardized format for use with Cascade models.
+
+Simple operation manual: Run `python parse_raw.py --input <input_file> --output <output_file>` where `<input_file>` is the path to the raw data file and `<output_file>` is the desired output path for the parsed data.
+
+### model_tester.py
+
+Basic information: This script tests a trained Cascade model on a single dataset to evaluate its performance and generate spike inferences.
+
+Simple operation manual: Run `python model_tester.py --model <model_path> --data <data_file> --output <output_dir>` where `<model_path>` is the path to the trained model, `<data_file>` is the parsed data file, and `<output_dir>` is the directory to save results.
+
+### model_tester_batch.py
+
+Basic information: This script performs batch testing of a trained Cascade model on multiple datasets, useful for evaluating generalization across different conditions.
+
+Simple operation manual: Run `python model_tester_batch.py --model <model_path> --data_dir <data_directory> --output <output_dir>` where `<model_path>` is the path to the trained model, `<data_directory>` contains multiple parsed data files, and `<output_dir>` is the directory to save batch results.
+
